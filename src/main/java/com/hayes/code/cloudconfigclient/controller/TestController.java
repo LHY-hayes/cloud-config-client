@@ -23,7 +23,7 @@ public class TestController {
         int i = new Random().nextInt(3000);
         System.out.println("本次睡眠时间💤 ： " +i);
         Thread.sleep(i);
-        return from1 ;
+        return from1 +" .. 本次睡眠时间💤 ： " +i ;
 
     }
 
