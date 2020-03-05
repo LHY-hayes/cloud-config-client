@@ -8,6 +8,8 @@ import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Random;
+
 @RestController
 @RefreshScope
 public class TestController {
@@ -16,8 +18,11 @@ public class TestController {
     private String from1 ;
 
     @RequestMapping("/from1")
-    public String getFrom(){
+    public String getFrom() throws InterruptedException {
 
+        int i = new Random().nextInt(3000);
+        System.out.println("本次睡眠时间💤 ： " +i);
+        Thread.sleep(i);
         return from1 ;
 
     }
